@@ -12,7 +12,7 @@ public class HumanityMenu {
 	private static final String TIME_CLOCK_XPATH = "//a[@id='sn_timeclock']//span[@class='primNavQtip__inner']";
 	private static final String LEAVE_XPATH = "//i[@class='primNavQtip__icon icon-leave2']";
 	private static final String TRAINING_XPATH = "//p[contains(text(),'Training')]";
-	private static final String STAFF_XPATH = "//a[@id='sn_staff']//span[@class='primNavQtip__inner']";
+	private static final String STAFF_XPATH = "//i[@class='primNavQtip__icon icon-user']";
 	private static final String PAYROLL_XPATH = "//a[@id='sn_payroll']//span[@class='primNavQtip__inner']";
 	private static final String REPORTS_XPATH = "//a[@id='sn_reports']//span[@class='primNavQtip__inner']";
 	private static final String SETTINGS_XPATH = "//i[@class='primNavQtip__icon icon-gear']";

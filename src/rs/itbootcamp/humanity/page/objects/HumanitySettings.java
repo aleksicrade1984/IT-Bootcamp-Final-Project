@@ -6,13 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class HumanitySettings {
-	
+
 	private static final String COUNTRY_XPATH = "//select[@id='country']";
 	private static final String TIMEFORMAT_XPATH = "//select[@name='pref_24hr']";
 	private static final String LANGUAGE_XPATH = "//td[@class='nowrap']//select[@name='language']";
 	private static final String SAVE_SETTINGS_XPATH = "//button[@id='_save_settings_button']";
-	
-	
 
 	public static Select getCountry(WebDriver driver) {
 		return new Select(driver.findElement(By.xpath(COUNTRY_XPATH)));
@@ -45,6 +43,5 @@ public class HumanitySettings {
 	public static void clickSaveSettings(WebDriver driver) {
 		getSaveSettings(driver).click();
 	}
-
 
 }

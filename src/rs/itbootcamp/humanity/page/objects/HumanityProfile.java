@@ -20,6 +20,7 @@ public class HumanityProfile {
 	public static void clickProfilePhoto(WebDriver driver) {
 		getProfilePhoto(driver).click();
 	}
+
 	public static WebElement getProfile(WebDriver driver) {
 		return driver.findElement(By.xpath(PROFILE_XPATH));
 	}
@@ -27,6 +28,7 @@ public class HumanityProfile {
 	public static void clickProfile(WebDriver driver) {
 		getProfile(driver).click();
 	}
+
 	public static WebElement getSettings(WebDriver driver) {
 		return driver.findElement(By.xpath(SETTINGS_XPATH));
 	}
@@ -34,6 +36,7 @@ public class HumanityProfile {
 	public static void clickSettings(WebDriver driver) {
 		getSettings(driver).click();
 	}
+
 	public static WebElement getAvailability(WebDriver driver) {
 		return driver.findElement(By.xpath(AVAILABILITY_XPATH));
 	}
@@ -41,6 +44,7 @@ public class HumanityProfile {
 	public static void clickAvailability(WebDriver driver) {
 		getAvailability(driver).click();
 	}
+
 	public static WebElement getSignOut(WebDriver driver) {
 		return driver.findElement(By.xpath(SIGN_OUT_XPATH));
 	}
@@ -48,12 +52,13 @@ public class HumanityProfile {
 	public static void clickSignOut(WebDriver driver) {
 		getSignOut(driver).click();
 	}
+
 	public static WebElement getVersion(WebDriver driver) {
 		return driver.findElement(By.xpath(VERSION_XPATH));
 	}
 
-	public static void clickVersion(WebDriver driver) {
-		getVersion(driver).click();
+	public static String versionNumber(WebDriver driver) {
+		return getVersion(driver).findElement(By.tagName("b")).getText();
 	}
-	
+
 }

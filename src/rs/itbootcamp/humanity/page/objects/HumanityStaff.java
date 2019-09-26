@@ -7,9 +7,10 @@ import org.openqa.selenium.WebElement;
 public class HumanityStaff {
 	public static final String URL_STAFF = "https://peraperic6.humanity.com/app/staff/list/load/true/";
 	private static final String ADD_EMPLOYEE_XPATH = "//button[@id='act_primary']";
-	private static final String FIRST_NAME_XPATH = "//input[@id='_asf1']";
-	private static final String LAST_NAME_XPATH = "//input[@id='_asl1']";
-	private static final String EMAIL_XPATH = "//input[@id='_ase1']";
+	private static final String FIRST_NAME_XPATH = "//input[@id='_asf";
+	private static final String LAST_NAME_XPATH = "//input[@id='_asl";
+	private static final String EMAIL_XPATH = "//input[@id='_ase";
+	private static final String ENDING_XPATH = "']";
 	private static final String SAVE_EMPLOYEE_XPATH = "//button[@id='_as_save_multiple']";
 	private static final String OPEN_EMPLOYEE_XPATH = "//a[@class='staff-employee']";
 
@@ -20,41 +21,26 @@ public class HumanityStaff {
 	public static void clickAddEmployee(WebDriver driver) {
 		getAddEmployee(driver).click();
 	}
-
-	public static WebElement getFirstName(WebDriver driver) {
-		return driver.findElement(By.xpath(FIRST_NAME_XPATH));
+	public static WebElement getFirstName(WebDriver driver, int br) {
+		return driver.findElement(By.xpath(FIRST_NAME_XPATH + br + ENDING_XPATH));
 	}
-
-	public static void clickFirstName(WebDriver driver) {
-		getFirstName(driver).click();
+	public static void setFirstName(WebDriver driver, int br, String name) {
+		getFirstName(driver, br).sendKeys(name);
+		
 	}
-
-	public static void inputFirstName(WebDriver driver, String data) {
-		getFirstName(driver).sendKeys(data);
+	public static WebElement getLastName(WebDriver driver, int br) {
+		return driver.findElement(By.xpath(LAST_NAME_XPATH + br + ENDING_XPATH));
 	}
-
-	public static WebElement getLastName(WebDriver driver) {
-		return driver.findElement(By.xpath(LAST_NAME_XPATH));
+	public static void setLastName(WebDriver driver, int br, String lastName) {
+		getLastName(driver, br).sendKeys(lastName);
+		
 	}
-
-	public static void clickLastName(WebDriver driver) {
-		getLastName(driver).click();
+	public static WebElement getEmail(WebDriver driver, int br) {
+		return driver.findElement(By.xpath(EMAIL_XPATH + br + ENDING_XPATH));
 	}
-
-	public static void inputLastName(WebDriver driver, String data) {
-		getLastName(driver).sendKeys(data);
-	}
-
-	public static WebElement getEmail(WebDriver driver) {
-		return driver.findElement(By.xpath(EMAIL_XPATH));
-	}
-
-	public static void clickEmail(WebDriver driver) {
-		getEmail(driver).click();
-	}
-
-	public static void inputEmail(WebDriver driver, String data) {
-		getEmail(driver).sendKeys(data);
+	public static void setEmail(WebDriver driver, int br, String email) {
+		getEmail(driver, br).sendKeys(email);
+		
 	}
 
 	public static WebElement getSaveEmployee(WebDriver driver) {

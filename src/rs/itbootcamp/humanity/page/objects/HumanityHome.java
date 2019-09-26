@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-
 //peraperic@temp-link.net
 //Aleksic1984
 public class HumanityHome {
@@ -20,6 +19,13 @@ public class HumanityHome {
 	private static final String PASSWORD_XPATH = "//input[@id='password']";
 	private static final String LOGIN_BUTTON_XPATH = "//button[contains(text(),'Log in')]";
 
+	public static void openPage(WebDriver driver) {
+		driver.get(URL);
+	}
+
+	public static void navigateToPage(WebDriver driver) {
+		driver.navigate().to(URL);
+	}
 
 	public static WebElement getAboutUs(WebDriver driver) {
 		return driver.findElement(By.xpath(ABOUT_US_XPATH));
@@ -108,6 +114,5 @@ public class HumanityHome {
 	public static void clickLoginButton(WebDriver driver) {
 		getLoginButton(driver).click();
 	}
-
 
 }

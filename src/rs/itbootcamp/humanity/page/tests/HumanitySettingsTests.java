@@ -10,7 +10,7 @@ import rs.itbootcamp.humanity.page.objects.HumanityMenu;
 import rs.itbootcamp.humanity.page.objects.HumanitySettings;
 
 public class HumanitySettingsTests {
-	public static boolean testCountry() { // testiranje promene drzave
+	public static boolean testCountry() throws InterruptedException { // testiranje promene drzave
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 
@@ -25,79 +25,21 @@ public class HumanitySettingsTests {
 		HumanityHome.clickPassword(driver);
 		HumanityHome.getPassword(driver).sendKeys("Aleksic1984");
 		HumanityHome.clickLoginButton(driver);
-
 		HumanityMenu.getSettings(driver);
 		HumanityMenu.clickSettings(driver);
-
 		HumanitySettings.getCountry(driver);
-		HumanitySettings.inputCountry(driver, "Romania");
-
+		HumanitySettings.inputCountry(driver, "Portugal");
 		HumanitySettings.clickSaveSettings(driver);
-
+		Thread.sleep(5000);
 		return false;
 	}
 
-	public static boolean testLanguage() { // testiranje promene jezika
+	public static boolean testLanguage() throws InterruptedException { // testiranje promene jezika
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 
 		driver.get(HumanityHome.URL);
 		if (driver.getCurrentUrl().contains(HumanityHome.URL) == false) {
-
-		}
-		driver.manage().window().maximize();
-		HumanityHome.clickLogin(driver);
-		HumanityHome.clickEmail(driver);
-		HumanityHome.getEmail(driver).sendKeys("peraperic@temp-link.net");
-		HumanityHome.clickPassword(driver);
-		HumanityHome.getPassword(driver).sendKeys("Aleksic1984");
-		HumanityHome.clickLoginButton(driver);
-
-		HumanityMenu.getSettings(driver);
-		HumanityMenu.clickSettings(driver);
-
-		HumanitySettings.getLanguage(driver);
-		HumanitySettings.inputLanguage(driver, "Romanian (machine)");
-
-		HumanitySettings.clickSaveSettings(driver);
-
-		return false;
-	}
-
-	public static boolean testTimeFormat() { // testiranje promene vremenskog formata
-		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
-
-		driver.get(HumanityHome.URL);
-		if (driver.getCurrentUrl().contains(HumanityHome.URL) == false) {
-
-		}
-		driver.manage().window().maximize();
-		HumanityHome.clickLogin(driver);
-		HumanityHome.clickEmail(driver);
-		HumanityHome.getEmail(driver).sendKeys("peraperic@temp-link.net");
-		HumanityHome.clickPassword(driver);
-		HumanityHome.getPassword(driver).sendKeys("Aleksic1984");
-		HumanityHome.clickLoginButton(driver);
-
-		HumanityMenu.getSettings(driver);
-		HumanityMenu.clickSettings(driver);
-
-		HumanitySettings.getTimeFormat(driver);
-		HumanitySettings.inputTimeFormat(driver, "24 hour");
-
-		HumanitySettings.clickSaveSettings(driver);
-
-		return false;
-	}
-
-	public static boolean testAll() { // testiranje promene vremenskog formata
-		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
-
-		driver.get(HumanityHome.URL);
-		if (driver.getCurrentUrl().contains(HumanityHome.URL) == false) {
-
 		}
 		driver.manage().window().maximize();
 		HumanityHome.clickLogin(driver);
@@ -109,17 +51,69 @@ public class HumanitySettingsTests {
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		HumanityMenu.getSettings(driver);
 		HumanityMenu.clickSettings(driver);
-
-		HumanitySettings.getCountry(driver);
-		HumanitySettings.inputCountry(driver, "Pakistan");
-
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		HumanitySettings.getLanguage(driver);
-		HumanitySettings.inputLanguage(driver, "Polish (machine)");
+		HumanitySettings.inputLanguage(driver, "German (machine)");
+		HumanitySettings.clickSaveSettings(driver);
+		Thread.sleep(5000);
+		return false;
+	}
 
+	public static boolean testTimeFormat() throws InterruptedException { // testiranje promene vremenskog formata
+		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+
+		driver.get(HumanityHome.URL);
+		if (driver.getCurrentUrl().contains(HumanityHome.URL) == false) {
+		}
+		driver.manage().window().maximize();
+		HumanityHome.clickLogin(driver);
+		HumanityHome.clickEmail(driver);
+		HumanityHome.getEmail(driver).sendKeys("peraperic@temp-link.net");
+		HumanityHome.clickPassword(driver);
+		HumanityHome.getPassword(driver).sendKeys("Aleksic1984");
+		HumanityHome.clickLoginButton(driver);
+		HumanityMenu.getSettings(driver);
+		HumanityMenu.clickSettings(driver);
 		HumanitySettings.getTimeFormat(driver);
 		HumanitySettings.inputTimeFormat(driver, "24 hour");
-
 		HumanitySettings.clickSaveSettings(driver);
+		Thread.sleep(5000);
+		return false;
+	}
+
+	public static boolean testSettingsAll() throws InterruptedException { // testiranje promene vremenskog formata
+		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get(HumanityHome.URL);
+		if (driver.getCurrentUrl().contains(HumanityHome.URL) == false) {
+		}
+		driver.manage().window().maximize();
+		HumanityHome.clickLogin(driver);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		HumanityHome.clickEmail(driver);
+		HumanityHome.getEmail(driver).sendKeys("peraperic@temp-link.net");
+		HumanityHome.clickPassword(driver);
+		HumanityHome.getPassword(driver).sendKeys("Aleksic1984");
+		HumanityHome.clickLoginButton(driver);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		HumanityMenu.getSettings(driver);
+		HumanityMenu.clickSettings(driver);
+
+		HumanitySettings.getCountry(driver);
+		HumanitySettings.inputCountry(driver, "Portugal");
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+
+		HumanitySettings.getLanguage(driver);
+		HumanitySettings.inputLanguage(driver, "German (machine)");
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		HumanitySettings.getTimeFormat(driver);
+		HumanitySettings.inputTimeFormat(driver, "24 hour");
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		HumanitySettings.clickSaveSettings(driver);
+
+		 Thread.sleep(5000);
+		driver.quit();
 
 		return false;
 	}
