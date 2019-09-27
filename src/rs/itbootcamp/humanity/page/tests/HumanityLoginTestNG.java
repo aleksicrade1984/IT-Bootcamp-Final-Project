@@ -15,8 +15,8 @@ public class HumanityLoginTestNG {
 	public void testLogin() {
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
-		String loginEmail = "peraperic@temp-link.net";
-		String password = "Aleksic1984";
+//		String loginEmail = "peraperic@temp-link.net";
+//		String password = "Aleksic1984";
 
 		HumanityHome.openPage(driver);
 		driver.manage().window().maximize();
@@ -27,8 +27,8 @@ public class HumanityLoginTestNG {
 		HumanityHome.getPassword(driver).sendKeys("Aleksic1984");
 		HumanityHome.clickLoginButton(driver);
 
-		boolean rez = driver.getCurrentUrl().contains(HumanityHome.URL);
-		Assert.assertTrue(rez);
+		boolean log = driver.getCurrentUrl().contains(HumanityHome.URL);
+		Assert.assertTrue(log);
 		
 
 	}

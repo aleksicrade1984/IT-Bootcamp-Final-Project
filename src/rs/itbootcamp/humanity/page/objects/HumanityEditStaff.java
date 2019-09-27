@@ -9,9 +9,9 @@ public class HumanityEditStaff {
 	private static final String EMPLOYEE_XPATH = "//a[contains(text(),'Pera Peric')]";
 	private static final String EDIT_DETAILS_XPATH = "//a[contains(text(),'Edit Details')]";
 	private static final String UPLOAD_PHOTO_XPATH = "//input[@id='fileupload']";
-	private static final String IMG_PATH ="C:\\Users\\Rade\\Desktop\\slika.jpg";
+	private static final String IMG_PATH = "C:\\Users\\Rade\\Desktop\\slika.jpg"; 
 	private static final String CHANGE_NICK_NAME_XPATH = "//input[@id='nick_name']";
-	private static final String SAVE_EMPLOYEE_XPATH = "//input[@name='update']";
+	private static final String SAVE_EMPLOYEE_XPATH = "//[@name='update']";
 
 	public static WebElement getEmployee(WebDriver driver) {
 		return driver.findElement(By.xpath(EMPLOYEE_XPATH));
@@ -29,20 +29,21 @@ public class HumanityEditStaff {
 		getEditDetails(driver).click();
 	}
 
-		
-	public static WebElement getUploadPhoto (WebDriver driver) {
+	public static WebElement getUploadPhoto(WebDriver driver) {
 		return driver.findElement(By.xpath(UPLOAD_PHOTO_XPATH));
-					
+
 	}
+
 	public static void clickUploadPhoto(WebDriver driver) {
 		getUploadPhoto(driver).click();
 	}
-	public static void sendPhoto(WebDriver driver) throws Exception{
+
+	public static void sendPhoto(WebDriver driver) throws Exception {
 		getUploadPhoto(driver).sendKeys(IMG_PATH);
 		Thread.sleep(3000);
-		
+
 	}
-	
+
 	public static WebElement getChangeNickName(WebDriver driver) {
 		return driver.findElement(By.xpath(CHANGE_NICK_NAME_XPATH));
 	}

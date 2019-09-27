@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-public class HumanityMenu {
+public class HumanityMenu {//pocetna strana i x path-ovi glavnog menija web stranice humanity.com
 	public static final String URL_FIRME = "https://peraperic6.humanity.com/app/dashboard/";
 	private static final String DASHBOARD_XPATH = "//a[@id='sn_dashboard']//span[@class='primNavQtip__inner']";
 	private static final String SHIFT_PLANNING_XPATH = "//a[@id='sn_schedule']//span[@class='primNavQtip__inner']";

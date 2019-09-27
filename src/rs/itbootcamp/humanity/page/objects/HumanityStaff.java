@@ -21,26 +21,31 @@ public class HumanityStaff {
 	public static void clickAddEmployee(WebDriver driver) {
 		getAddEmployee(driver).click();
 	}
+
 	public static WebElement getFirstName(WebDriver driver, int br) {
 		return driver.findElement(By.xpath(FIRST_NAME_XPATH + br + ENDING_XPATH));
 	}
+
 	public static void setFirstName(WebDriver driver, int br, String name) {
 		getFirstName(driver, br).sendKeys(name);
-		
+
 	}
+
 	public static WebElement getLastName(WebDriver driver, int br) {
 		return driver.findElement(By.xpath(LAST_NAME_XPATH + br + ENDING_XPATH));
 	}
+
 	public static void setLastName(WebDriver driver, int br, String lastName) {
 		getLastName(driver, br).sendKeys(lastName);
-		
 	}
+
 	public static WebElement getEmail(WebDriver driver, int br) {
 		return driver.findElement(By.xpath(EMAIL_XPATH + br + ENDING_XPATH));
 	}
+
 	public static void setEmail(WebDriver driver, int br, String email) {
 		getEmail(driver, br).sendKeys(email);
-		
+
 	}
 
 	public static WebElement getSaveEmployee(WebDriver driver) {

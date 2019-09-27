@@ -13,7 +13,7 @@ import rs.itbootcamp.humanity.page.objects.HumanityProfile;
 import rs.itbootcamp.humanity.utility.ExcelUtils;
 
 public class HumanityLoginTests {
-	//stavka 1 u glavnom meniju, Test Login
+	// stavka 1 u glavnom meniju, Test Login
 	public static boolean testLogin() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
@@ -29,12 +29,18 @@ public class HumanityLoginTests {
 		HumanityHome.clickPassword(driver);
 		HumanityHome.getPassword(driver).sendKeys("Aleksic1984");
 		HumanityHome.clickLoginButton(driver);
-
-		Thread.sleep(2000);
+		if (driver.getCurrentUrl().contains(HumanityMenu.URL_FIRME) == false) {
+			System.out.println("Login successful");
+			driver.quit();
+			return false;
+		} else
+			System.out.println("Login unsuccessful");
+		Thread.sleep(5000);
 		driver.quit();
 
-		return false;
+		return true;
 	}
+
 //stavka 2 u glavnom meniju, Test Login using Excel
 	public static boolean testLoginExcel() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
@@ -42,28 +48,33 @@ public class HumanityLoginTests {
 		driver.get(HumanityHome.URL);
 		driver.manage().window().maximize();
 		HumanityHome.clickLogin(driver);
-		String DATA_SOURCE= "Data.xls";
-		if(driver.getCurrentUrl().contains(HumanityHome.URL)==false){
+		String DATA_SOURCE = "Data.xls";
+		if (driver.getCurrentUrl().contains(HumanityHome.URL) == false) {
 			return false;
 		}
 
 		ExcelUtils.setExcell(DATA_SOURCE);
-		ExcelUtils.setWorkSheet(1);
+		ExcelUtils.setWorkSheet(0);
 
 		String email, password;
-		email=ExcelUtils.getDataAt(1,0);
-		password= ExcelUtils.getDataAt(1, 1);
-		
+		email = ExcelUtils.getDataAt(1, 0);
+		password = ExcelUtils.getDataAt(1, 1);
+
 		HumanityHome.inputEmail(driver, email);
 		HumanityHome.inputPassword(driver, password);
 		HumanityHome.clickLoginButton(driver);
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-		
-		Thread.sleep(2000);
-	
+		if (driver.getCurrentUrl().contains(HumanityMenu.URL_FIRME) == false) {
+			System.out.println("Login successful");
+			driver.quit();
+			return false;
+		} else
+			System.out.println("Login unsuccessful");
+		Thread.sleep(5000);
+
 		driver.quit();
 		return true;
 	}
+
 	public static boolean testLogOut() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
@@ -80,12 +91,12 @@ public class HumanityLoginTests {
 		HumanityHome.getPassword(driver).sendKeys("Aleksic1984");
 		HumanityHome.clickLoginButton(driver);
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-		
+
 		HumanityProfile.clickProfilePhoto(driver);
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		HumanityProfile.clickSignOut(driver);
 
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		driver.quit();
 
 		return false;

@@ -28,7 +28,7 @@ public class HumanitySettingsTests {
 		HumanityMenu.getSettings(driver);
 		HumanityMenu.clickSettings(driver);
 		HumanitySettings.getCountry(driver);
-		HumanitySettings.inputCountry(driver, "Portugal");
+		HumanitySettings.inputCountry(driver, "Senegal");
 		HumanitySettings.clickSaveSettings(driver);
 		Thread.sleep(5000);
 		return false;
@@ -53,12 +53,13 @@ public class HumanitySettingsTests {
 		HumanityMenu.clickSettings(driver);
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		HumanitySettings.getLanguage(driver);
-		HumanitySettings.inputLanguage(driver, "German (machine)");
+		HumanitySettings.inputLanguage(driver, "Serbian (machine)");
 		HumanitySettings.clickSaveSettings(driver);
 		Thread.sleep(5000);
 		return false;
 	}
 
+//testiranje promene TimeFormata 
 	public static boolean testTimeFormat() throws InterruptedException { // testiranje promene vremenskog formata
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
@@ -76,7 +77,7 @@ public class HumanitySettingsTests {
 		HumanityMenu.getSettings(driver);
 		HumanityMenu.clickSettings(driver);
 		HumanitySettings.getTimeFormat(driver);
-		HumanitySettings.inputTimeFormat(driver, "24 hour");
+		HumanitySettings.inputTimeFormat(driver, "12 hour");
 		HumanitySettings.clickSaveSettings(driver);
 		Thread.sleep(5000);
 		return false;
@@ -99,11 +100,9 @@ public class HumanitySettingsTests {
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		HumanityMenu.getSettings(driver);
 		HumanityMenu.clickSettings(driver);
-
 		HumanitySettings.getCountry(driver);
 		HumanitySettings.inputCountry(driver, "Portugal");
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-
 		HumanitySettings.getLanguage(driver);
 		HumanitySettings.inputLanguage(driver, "German (machine)");
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
@@ -111,8 +110,7 @@ public class HumanitySettingsTests {
 		HumanitySettings.inputTimeFormat(driver, "24 hour");
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		HumanitySettings.clickSaveSettings(driver);
-
-		 Thread.sleep(5000);
+		Thread.sleep(5000);
 		driver.quit();
 
 		return false;

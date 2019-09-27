@@ -23,7 +23,6 @@ public class HumanityEditStaffTests {
 		HumanityHome.getPassword(driver).sendKeys("Aleksic1984");
 		HumanityHome.clickLoginButton(driver);
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-		
 		HumanityMenu.clickStaff(driver);
 		HumanityEditStaff.clickEmployee(driver);
 		HumanityEditStaff.clickEditDetails(driver);
@@ -34,7 +33,8 @@ public class HumanityEditStaffTests {
 		Thread.sleep(3000);
 		driver.quit();
 		return false;
-}
+	}
+
 	public static boolean testNickName() throws Exception {
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
@@ -48,16 +48,15 @@ public class HumanityEditStaffTests {
 		HumanityHome.getPassword(driver).sendKeys("Aleksic1984");
 		HumanityHome.clickLoginButton(driver);
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-		
 		HumanityMenu.clickStaff(driver);
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		HumanityEditStaff.clickEmployee(driver);
 		HumanityEditStaff.clickEditDetails(driver);
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		HumanityEditStaff.clickChangeNickName(driver);
-		HumanityEditStaff.inputChangeNickName(driver, "Zika");
+		HumanityEditStaff.inputChangeNickName(driver, "Pera Zika");
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		HumanityEditStaff.clickSaveEmployee(driver);
 		return false;
-}
+	}
 }

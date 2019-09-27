@@ -11,8 +11,8 @@ public class HumanityHome {
 	private static final String ABOUT_US_XPATH = "//a[@class='nav-link no-before'][contains(text(),'About us')]";
 	private static final String FULL_NAME_XPATH = "//div[@class='input-wrapper']//input[@placeholder='Full Name']";
 	private static final String WORK_EMAIL_XPATH = "//div[@class='input-wrapper']//input[@placeholder='Work Email']";
-	private static final String FREE_TRIAL_XPATH = "//input[@id='free-trial-link-01']";
-	private static final String FREE_TRIAL_2_XPATH = "//a[@class='button pale']";
+	private static final String FREE_TRIAL_XPATH = "//input[@id='free-trial-link-01']";//donji levi ugao
+	private static final String FREE_TRIAL_2_XPATH = "//a[@class='button pale']";//gornji desni ugao
 
 	private static final String LOGIN_XPATH = "//p[contains(text(),'LOGIN')]";
 	private static final String EMAIL_XPATH = "//input[@id='email']";
